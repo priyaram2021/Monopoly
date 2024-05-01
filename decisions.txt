@@ -1,0 +1,19 @@
+Design and Architectural Decisions:
+
+1. Spring Boot Service:
+   - The GameService class is annotated with @Service, indicating that it's a service component managed by Spring Boot.
+
+2. Dependency Injection:
+   - GameRepository, PlayerRepository, and PlaceRepository are autowired into the service using constructor injection, providing access to data access functionality.
+
+3. Separation of Concerns:
+   - The GameService class focuses on game-related logic such as creating a game, joining a game, and rolling the dice. It encapsulates these functionalities, promoting modularity and maintainability.
+
+4. DTO Usage:
+   - Data Transfer Objects (DTOs) like GameDTO, PlayerDTO, and ActionResponseDTO are used to encapsulate data exchanged between the service layer and the client, ensuring loose coupling and flexibility.
+
+5. Exception Handling:
+   - Custom exceptions like GameNotFoundException and PlayerNotFoundException are thrown to handle scenarios where the requested game or player is not found, providing informative error messages for better error handling and debugging.
+
+6. Randomization:
+   - Java's Math.random() method is used to simulate dice rolls, ensuring randomness in the game and providing an element of unpredictability.
